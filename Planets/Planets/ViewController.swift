@@ -244,25 +244,25 @@ extension ViewController {
         }
         switch nodeName {
         case PlanetNames.Sun.rawValue:
-            
+            showInfo(with: "SUN", description: "The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, with internal convective motion that generates a magnetic field via a dynamo process. It is by far the most important source of energy for life on Earth.")
         case PlanetNames.Mercury.rawValue:
-            
+            showInfo(with: "MERCURY", description: "Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger of the gods.")
         case PlanetNames.Venus.rawValue:
-            
+            showInfo(with: "VENUS", description: "Venus is the second planet from the Sun, orbiting it every 224.7 Earth days. It has the longest rotation period of any planet in the Solar System and rotates in the opposite direction to most other planets. It does not have any natural satellites. It is named after the Roman goddess of love and beauty.")
         case PlanetNames.Earth.rawValue:
-            
+            showInfo(with: "EARTH", description: "Earth is the third planet from the Sun and the only astronomical object known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4.5 billion years ago. Earth's gravity interacts with other objects in space, especially the Sun and the Moon, Earth's only natural satellite.")
         case PlanetNames.Moon.rawValue:
-            
+            showInfo(with: "MOON", description: "The Moon is an astronomical body that orbits planet Earth and is Earth's only permanent natural satellite. It is the fifth-largest natural satellite in the Solar System, and the largest among planetary satellites relative to the size of the planet that it orbits.")
         case PlanetNames.Mars.rawValue:
-            
+            showInfo(with: "MARS", description: "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war")
         case PlanetNames.Jupiter.rawValue:
-            
+            showInfo(with: "JUPITER", description: "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a giant planet with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined.")
         case PlanetNames.Saturn.rawValue:
-            
+            showInfo(with: "SATURN", description: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. It has only one-eighth the average density of Earth, but with its larger volume Saturn is over 95 times more massive.")
         case PlanetNames.Uranus.rawValue:
-            
+            showInfo(with: "URANUS", description: "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. Uranus is similar in composition to Neptune, and both have bulk chemical compositions which differ from that of the larger gas giants Jupiter and Saturn.")
         case PlanetNames.Neptune.rawValue:
-            
+            showInfo(with: "NEPTUNE", description: "Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.")
         default:
             break
         }
@@ -293,5 +293,10 @@ extension ViewController {
         return foreverRotation
     }
     
-    
+    private func showInfo(with title: String, description: String) {
+        let alertController = UIAlertController.init(title: title, message: description, preferredStyle: .alert)
+        let OKAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
