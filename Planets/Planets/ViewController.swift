@@ -46,6 +46,7 @@ extension ViewController {
     private func addSun() {
         sun.geometry?.firstMaterial?.diffuse.contents = UIImage.init(named: "sun")
         sun.position = SCNVector3.init(0, 0, -1)
+        sun.name = PlanetNames.Sun.rawValue
         let sunAction = Rotation(time: 8)
         sun.runAction(sunAction)
         self.sceneView.scene.rootNode.addChildNode(sun)
@@ -73,6 +74,8 @@ extension ViewController {
         moonParent.addChildNode(moon)
         earthParent.addChildNode(earth)
         earthParent.addChildNode(moonParent)
+        earthParent.name = PlanetNames.Earth.rawValue
+        moonParent.name = PlanetNames.Moon.rawValue
         
         let earthParentAction = Rotation(time: 14)
         earthParent.runAction(earthParentAction)
@@ -91,6 +94,7 @@ extension ViewController {
         let venusAction = Rotation(time: 8)
         venus.runAction(venusAction)
         venusParent.addChildNode(venus)
+        venusParent.name = PlanetNames.Venus.rawValue
         
         let venusParentAction = Rotation(time: 10)
         venusParent.runAction(venusParentAction)
@@ -109,6 +113,7 @@ extension ViewController {
         let mercuryAction = Rotation(time: 7)
         mercury.runAction(mercuryAction)
         mercuryParent.addChildNode(mercury)
+        mercuryParent.name = PlanetNames.Mercury.rawValue
         
         let mercuryParentAction = Rotation(time: 7)
         mercuryParent.runAction(mercuryParentAction)
@@ -128,6 +133,7 @@ extension ViewController {
         let marsAction = Rotation(time: 10)
         mars.runAction(marsAction)
         marsParent.addChildNode(mars)
+        marsParent.name = PlanetNames.Mars.rawValue
         
         let marsParentAction = Rotation(time: 16)
         marsParent.runAction(marsParentAction)
@@ -147,6 +153,7 @@ extension ViewController {
         let jupiterAction = Rotation(time: 11)
         jupiter.runAction(jupiterAction)
         jupiterParent.addChildNode(jupiter)
+        jupiterParent.name = PlanetNames.Jupiter.rawValue
         
         let jupiterParentAction = Rotation(time: 19)
         jupiterParent.runAction(jupiterParentAction)
@@ -172,6 +179,7 @@ extension ViewController {
         let saturnAction = Rotation(time: 12)
         saturn.runAction(saturnAction)
         saturnParent.addChildNode(saturn)
+        saturnParent.name = PlanetNames.Saturn.rawValue
         
         let saturnParentAction = Rotation(time: 21)
         saturnParent.runAction(saturnParentAction)
@@ -191,6 +199,7 @@ extension ViewController {
         let uranusAction = Rotation(time: 13)
         uranus.runAction(uranusAction)
         uranusParent.addChildNode(uranus)
+        uranusParent.name = PlanetNames.Uranus.rawValue
         
         let uranusParentAction = Rotation(time: 22)
         uranusParent.runAction(uranusParentAction)
@@ -210,6 +219,7 @@ extension ViewController {
         let neptuneAction = Rotation(time: 14)
         neptune.runAction(neptuneAction)
         neptuneParent.addChildNode(neptune)
+        neptuneParent.name = PlanetNames.Neptune.rawValue
         
         let neptuneParentAction = Rotation(time: 24)
         neptuneParent.runAction(neptuneParentAction)
@@ -224,6 +234,39 @@ extension ViewController {
                            normal: nil,
                            position: SCNVector3.init(0, 0, -0.3))
         return moon
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touchLocation = touches.first?.location(in: self.sceneView),
+            let hitNode = self.sceneView.hitTest(touchLocation, options: nil).first?.node,
+            let nodeName = hitNode.name else {
+                return
+        }
+        switch nodeName {
+        case PlanetNames.Sun.rawValue:
+            
+        case PlanetNames.Mercury.rawValue:
+            
+        case PlanetNames.Venus.rawValue:
+            
+        case PlanetNames.Earth.rawValue:
+            
+        case PlanetNames.Moon.rawValue:
+            
+        case PlanetNames.Mars.rawValue:
+            
+        case PlanetNames.Jupiter.rawValue:
+            
+        case PlanetNames.Saturn.rawValue:
+            
+        case PlanetNames.Uranus.rawValue:
+            
+        case PlanetNames.Neptune.rawValue:
+            
+        default:
+            break
+        }
+        
     }
     
 }
@@ -249,5 +292,6 @@ extension ViewController {
         let foreverRotation = SCNAction.repeatForever(rotation)
         return foreverRotation
     }
+    
     
 }

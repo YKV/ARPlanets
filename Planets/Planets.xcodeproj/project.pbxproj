@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44C8B9E3222320A2009A5A63 /* PlanetNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C8B9E2222320A2009A5A63 /* PlanetNames.swift */; };
 		44FED5AF2217BCE1002EA539 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FED5AE2217BCE1002EA539 /* AppDelegate.swift */; };
 		44FED5B12217BCE1002EA539 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FED5B02217BCE1002EA539 /* ViewController.swift */; };
 		44FED5B42217BCE1002EA539 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FED5B22217BCE1002EA539 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44C8B9E2222320A2009A5A63 /* PlanetNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetNames.swift; sourceTree = "<group>"; };
 		44FED5AB2217BCE1002EA539 /* Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FED5AE2217BCE1002EA539 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FED5B02217BCE1002EA539 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				44FED5B22217BCE1002EA539 /* Main.storyboard */,
 				44FED5C22217CB14002EA539 /* Resources */,
 				44FED5C32217CB21002EA539 /* Extensions */,
+				44C8B9E2222320A2009A5A63 /* PlanetNames.swift */,
 			);
 			path = Planets;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C8B9E3222320A2009A5A63 /* PlanetNames.swift in Sources */,
 				44FED5C12217CB06002EA539 /* Integer.swift in Sources */,
 				44FED5B12217BCE1002EA539 /* ViewController.swift in Sources */,
 				44FED5AF2217BCE1002EA539 /* AppDelegate.swift in Sources */,
